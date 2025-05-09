@@ -14,7 +14,7 @@ function App() {
 
   const fetchNews = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/news');
+      const res = await axios.get('https://ai-news-ur4n.onrender.com');
       setArticles(res.data.articles);
     } catch (err) {
       console.error('Error fetching news:', err);
