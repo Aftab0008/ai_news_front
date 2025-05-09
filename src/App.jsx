@@ -12,14 +12,14 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  const fetchNews = async () => {
-    try {
-      const res = await axios.get('https://ai-news-ur4n.onrender.com');
-      setArticles(res.data.articles);
-    } catch (err) {
-      console.error('Error fetching news:', err);
-    }
-  };
+ const fetchNews = async () => {
+  try {
+    const res = await axios.get('https://ai-news-ur4n.onrender.com/api/news');
+    setArticles(res.data.articles);
+  } catch (err) {
+    console.error('Error fetching news:', err);
+  }
+};
  // Get only the first 5 valid images for the slider
   const sliderImages = articles
     .filter(a => a.urlToImage)
